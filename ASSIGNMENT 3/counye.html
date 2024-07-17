@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        #counter {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let count = 0;
+
+        const counterElement = document.getElementById('counter');
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+        const resetButton = document.getElementById('reset');
+
+        function updateCounter() {
+            counterElement.textContent = count;
+        }
+
+        incrementButton.addEventListener('click', function() {
+            count++;
+            updateCounter();
+        });
+
+        decrementButton.addEventListener('click', function() {
+            count--;
+            updateCounter();
+        });
+
+        resetButton.addEventListener('click', function() {
+            count = 0;
+            updateCounter();
+        });
+
+        updateCounter(); // Initial call to display the initial count
+    </script>
+</body>
+</html>
